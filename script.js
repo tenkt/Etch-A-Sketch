@@ -1,7 +1,8 @@
 const container = document.querySelector('.container');
-const gridSize = 16;
+const buttonPrompt = document.querySelector('button')
+let gridSize = 16;
 
-const createGrid = (gridSize) => {
+function createGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement('div');
     row.classList.add('row');
@@ -13,14 +14,19 @@ const createGrid = (gridSize) => {
       squareBox.style.width = `${widthAndHeight}px`;
       squareBox.style.height = `${widthAndHeight}px`;
       squareBox.addEventListener('mouseenter', () => {
-        squareBox.style.backgroundColor = 'red'
-      })
+        squareBox.style.backgroundColor = 'red';
+      });
       row.appendChild(squareBox);
     }
     container.appendChild(row);
   }
 }
 
-
-
 createGrid(gridSize);
+
+buttonPrompt.addEventListener('click', () => {
+  let inputSize = Number(prompt('Enter grid size:'))
+
+
+});
+
