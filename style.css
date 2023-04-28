@@ -2,19 +2,20 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(21, 53, 114);
     height: 100%;
     width: 100%;
 }
 
-.sketchContainer {
-    width: 600px;
-    height: 600px;
-    border: 4px solid black;
+.container {
 }
 
-.gridSquares {
-    width: 75px;
-    height: 75px;
-    border: 4px solid black;
+.row {
+    display: flex;
+}
+
+.squareBox {
+    width: 38px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: aqua;
 }
