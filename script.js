@@ -12,10 +12,15 @@ const createGrid = (gridSize) => {
       squareBox.classList.add('squareBox');
       squareBox.style.width = `${widthAndHeight}px`;
       squareBox.style.height = `${widthAndHeight}px`;
+      squareBox.addEventListener('mouseenter', () => {
+        squareBox.style.backgroundColor = 'red'
+      })
       row.appendChild(squareBox);
     }
     container.appendChild(row);
   }
 }
+
+
 
 createGrid(gridSize);

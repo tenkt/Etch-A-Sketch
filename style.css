@@ -4,6 +4,7 @@ html, body {
     align-items: center;
     height: 100%;
     width: 100%;
+    background-color: silver;
 }
 
 .container {
@@ -15,5 +16,5 @@ html, body {
 
 .squareBox {
     border: 1px solid black;
-    background-color: rgb(255, 51, 0);
+    background-color: white
 }
