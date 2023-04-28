@@ -1,24 +1,19 @@
 const container = document.querySelector('.container');
-const gridSize = 4;
-//const sketchContainer = document.createElement('div');
-//sketchContainer.classList.add('sketchContainer');
-//ontainer.appendChild(sketchContainer);
+const gridSize = 16;
 
-//const gridSquares = document.createElement('div');
-//gridSquares.classList.add('gridSquares');
-//sketchContainer.appendChild(gridSquares);
-
-const createGrid = (grid) => {
+const createGrid = (gridSize) => {
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement('div');
-    row.classList.add('row')
+    row.classList.add('row');
 
-    for (let j = 0; j < grid; j++) {
+    for (let j = 0; j < gridSize; j++) {
+      const widthAndHeight = 608 / gridSize;
       const squareBox = document.createElement('div');
       squareBox.classList.add('squareBox');
+      squareBox.style.width = `${widthAndHeight}px`;
+      squareBox.style.height = `${widthAndHeight}px`;
       row.appendChild(squareBox);
     }
-
     container.appendChild(row);
   }
 }
