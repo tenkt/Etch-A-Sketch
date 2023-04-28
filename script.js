@@ -3,6 +3,9 @@ const buttonPrompt = document.querySelector('button')
 let gridSize = 16;
 
 function createGrid(gridSize) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('wrapper');
+
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement('div');
     row.classList.add('row');
@@ -18,15 +21,25 @@ function createGrid(gridSize) {
       });
       row.appendChild(squareBox);
     }
-    container.appendChild(row);
+    wrapper.appendChild(row);
   }
+  container.appendChild(wrapper)
 }
 
 createGrid(gridSize);
 
 buttonPrompt.addEventListener('click', () => {
-  let inputSize = Number(prompt('Enter grid size:'))
-
-
+  let userSize = (prompt('Enter grid size:'))
+  
+  while (userSize > 100) {
+    userSize = (prompt('Enter grid size between 0-100'));
+  }
+  const wrapper = document.querySelector('.wrapper')
+  if(!wrapper) {
+  createGrid(userSize);
+  } else {
+    wrapper.remove()
+    createGrid(userSize)
+  }
 });
 
